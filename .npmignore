@@ -1,0 +1,6 @@
+test/
+coverage/
+tsconfig.json
+side-limit.js
+index.min.js
+index.min.br

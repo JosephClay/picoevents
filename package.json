@@ -1,0 +1,106 @@
+{
+  "name": "picoevents",
+  "version": "1.0.0",
+  "description": "Simple and tiny (11 byte) event emitter library",
+  "keywords": [
+    "EventEmitter",
+    "Events",
+    "emit",
+    "emitter",
+    "event",
+    "pub/sub",
+    "publish",
+    "reactor",
+    "subscribe"
+  ],
+  "scripts": {
+    "test:coverage": "c8 pnpm bnt",
+    "test:lint": "eslint .",
+    "test:types": "check-dts",
+    "test:size": "size-limit",
+    "size:output": "node size-limit.js",
+    "test": "pnpm run /^test:/"
+  },
+  "author": "Joseph Clay <j053phclay@gmail.com>",
+  "license": "MIT",
+  "repository": "JosephClay/picoevents",
+  "engines": {
+    "node": "^18.0.0 || >=20.0.0"
+  },
+  "sideEffects": false,
+  "type": "module",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": "./index.js",
+    "./package.json": "./package.json"
+  },
+  "devDependencies": {
+    "@logux/eslint-config": "^52.0.2",
+    "@size-limit/esbuild": "^11.0.1",
+    "@size-limit/esbuild-why": "^11.0.1",
+    "@size-limit/preset-small-lib": "^11.0.1",
+    "@types/node": "^20.10.4",
+    "@typescript-eslint/eslint-plugin": "^6.13.2",
+    "@typescript-eslint/parser": "^6.13.2",
+    "benchmark": "^2.1.4",
+    "better-node-test": "^0.4.1",
+    "brotli-compress": "^1.3.3",
+    "c8": "^8.0.1",
+    "check-dts": "^0.7.2",
+    "clean-publish": "^4.2.0",
+    "eslint": "^8.55.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-n": "^16.3.1",
+    "eslint-plugin-prefer-let": "^3.0.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "size-limit": "^11.0.1",
+    "tsx": "^4.6.2",
+    "typescript": "^5.3.3"
+  },
+  "size-limit": [
+    {
+      "import": "{ e }",
+      "limit": "107 B",
+      "gzip": false,
+      "brotli": true
+    }
+  ],
+  "prettier": {
+    "arrowParens": "avoid",
+    "jsxSingleQuote": false,
+    "quoteProps": "consistent",
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "none"
+  },
+  "eslintConfig": {
+    "extends": "@logux/eslint-config/ts",
+    "rules": {
+      "@typescript-eslint/no-explicit-any": "off",
+      "no-shadow": "off",
+      "no-return-assign": "off",
+      "no-sequences": "off"
+    }
+  },
+  "c8": {
+    "exclude": [
+      "**/*.test.*",
+      "test/*"
+    ],
+    "lines": 100,
+    "check-coverage": true,
+    "reporter": [
+      "text",
+      "lcov"
+    ],
+    "skip-full": true,
+    "clean": true
+  },
+  "eslintIgnore": [
+    "**/errors.ts"
+  ],
+  "clean-publish": {
+    "cleanDocs": true
+  }
+}
