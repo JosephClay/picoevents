@@ -5,9 +5,9 @@
 // js module syntax allows to rename on import e.g. { e as emitter }
 // size: encapsulation to avoid `this`
 // size: renamed from `event` to `e`
-// size: shadowing the variable
 // size: declaring the variables in the function signature
 export let e = (e = {}) => ({
+  // size: shadowing the variable
   e,
   // size: instead of ...args, allow a single object to be passed
   emit(name, arg) {

@@ -2,7 +2,7 @@
 
 Simple and tiny event emitter library for JavaScript.
 
-* Only **11 bytes** (minified and brotlied).
+* Only **97 bytes** (minified and brotlied).
 * The `on` method returns `unbind` function. You don’t need to save
   callback to variable for `removeListener`.
 * TypeScript and ES modules support.

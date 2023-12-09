@@ -1,7 +1,7 @@
 {
   "name": "picoevents",
   "version": "1.0.0",
-  "description": "Simple and tiny (11 byte) event emitter library",
+  "description": "Simple and tiny (97 byte) event emitter library",
   "keywords": [
     "EventEmitter",
     "Events",
@@ -44,7 +44,7 @@
     "@typescript-eslint/parser": "^6.13.2",
     "benchmark": "^2.1.4",
     "better-node-test": "^0.4.1",
-    "brotli-compress": "^1.3.3",
+    "brotli": "^1.3.3",
     "c8": "^8.0.1",
     "check-dts": "^0.7.2",
     "clean-publish": "^4.2.0",
@@ -102,5 +102,8 @@
   ],
   "clean-publish": {
     "cleanDocs": true
+  },
+  "dependencies": {
+    "node-gzip": "^1.1.2"
   }
 }

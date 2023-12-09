@@ -1,6 +1,6 @@
-import * as br from 'brotli-compress';
-import { readFile, writeFile } from 'node:fs/promises';
+import brotli from 'brotli';
+import { gzip } from 'node-gzip';
+import fs from 'node:fs';
 
-const file = await readFile('index.min.js');
-const compressed = await br.default.compress(file.toString());
-await writeFile('index.min.br', compressed);
+fs.writeFileSync('index.min.br', brotli.compress(fs.readFileSync('index.min.js')));
+fs.writeFileSync('index.min.gz', await gzip(fs.readFileSync('index.min.js').toString()));
